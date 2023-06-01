@@ -34,16 +34,28 @@ enum layer_names {
 };
 
 // Homerow mods
-#define GUI_A MT(MOD_LGUI,KC_A)
-#define ALT_S MT(MOD_LALT,KC_S)
-#define SFT_D MT(MOD_LSFT,KC_D)
-#define CTL_F MT(MOD_LCTL,KC_F)
+#define GUI_A LGUI_T(KC_A)
+#define ALT_S LALT_T(KC_S)
+#define SFT_D LSFT_T(LKC_D)
+#define CTL_F LCTL_T(LKC_F)
 
 #define CTL_J LCTL_T(KC_J)
 #define SFT_K LSFT_T(KC_K)
-#define ALT_L MT(MOD_LALT,KC_L)
-#define GUI_SCLN MT(MOD_LGUI,KC_SCLN)
+#define ALT_L LALT_T(KC_L)
+#define GUI_SCLN LGUI_T(KC_SCLN)
 
+// Homerow mods for colemak
+#define GUI_A LGUI_T(KC_A)
+#define ALT_R LALT_T(KC_R)
+#define SFT_S LSFT_T(LKC_S)
+#define CTL_T LCTL_T(LKC_T)
+
+#define CTL_N LCTL_T(KC_N)
+#define SFT_E LSFT_T(KC_E)
+#define ALT_I LALT_T(KC_I)
+#define GUI_O LGUI_T(KC_O)
+
+// Hotkey keycode 
 #define NXTTAB LCTL(KC_PGDN)
 #define PRVTAB LCTL(KC_PGUP)
 
@@ -91,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       QK_GESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                         KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      CW_TOGG,    KC_A,    KC_R,    KC_S,    KC_T,    KC_D,                         KC_H,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOT,
+      CW_TOGG,   GUI_A,   ALT_R,   SFT_S,   CTL_T,    KC_D,                         KC_H,   CTL_N,   SFT_E,    ALT_I,  GUI_O, KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_PSCR,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
