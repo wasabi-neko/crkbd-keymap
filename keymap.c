@@ -34,26 +34,26 @@ enum layer_names {
 };
 
 // Homerow mods
-#define GUI_A LGUI_T(KC_A)
-#define ALT_S LALT_T(KC_S)
-#define SFT_D LSFT_T(LKC_D)
-#define CTL_F LCTL_T(LKC_F)
+#define HOME_A LGUI_T(KC_A)
+#define HOME_S LALT_T(KC_S)
+#define HOME_D LSFT_T(KC_D)
+#define HOME_F LCTL_T(KC_F)
 
-#define CTL_J LCTL_T(KC_J)
-#define SFT_K LSFT_T(KC_K)
-#define ALT_L LALT_T(KC_L)
-#define GUI_SCLN LGUI_T(KC_SCLN)
+#define HOME_J LCTL_T(KC_J)
+#define HOME_K LSFT_T(KC_K)
+#define HOME_L LALT_T(KC_L)
+#define HOME_SCLN LGUI_T(KC_SCLN)
 
 // Homerow mods for colemak
-#define GUI_A LGUI_T(KC_A)
-#define ALT_R LALT_T(KC_R)
-#define SFT_S LSFT_T(LKC_S)
-#define CTL_T LCTL_T(LKC_T)
+#define HOME_A LGUI_T(KC_A)
+#define HOME_R LALT_T(KC_R)
+// #define HOME_S LSFT_T(KC_S)
+#define HOME_T LCTL_T(KC_T)
 
-#define CTL_N LCTL_T(KC_N)
-#define SFT_E LSFT_T(KC_E)
-#define ALT_I LALT_T(KC_I)
-#define GUI_O LGUI_T(KC_O)
+#define HOME_N LCTL_T(KC_N)
+#define HOME_E LSFT_T(KC_E)
+#define HOME_I LALT_T(KC_I)
+#define HOME_O LGUI_T(KC_O)
 
 // Hotkey keycode 
 #define NXTTAB LCTL(KC_PGDN)
@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       QK_GESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      CW_TOGG,   GUI_A,   ALT_S,   SFT_D,   CTL_F,    KC_G,                         KC_H,   CTL_J,   SFT_K,   ALT_L,GUI_SCLN, KC_QUOT,
+      CW_TOGG,  HOME_A,  HOME_S,  HOME_D,  HOME_F,    KC_G,                         KC_H,  HOME_J,  HOME_K,  HOME_L,HOME_SCLN, KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_PSCR,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -101,11 +101,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Colemak
   [L_COLEMAK] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_GESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                         KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
+      QK_GESC,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      CW_TOGG,   GUI_A,   ALT_R,   SFT_S,   CTL_T,    KC_D,                         KC_H,   CTL_N,   SFT_E,    ALT_I,  GUI_O, KC_QUOT,
+      CW_TOGG,  HOME_A,  HOME_R,  HOME_S,  HOME_T,    KC_G,                         KC_M,  HOME_N,  HOME_E,  HOME_I,  HOME_O, KC_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_K,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_PSCR,
+      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_PSCR,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                         LT(L_GUI,KC_LGUI), LT(L_NUM,KC_TAB), LT(L_NAVI,KC_SPC),     KC_ENT, MT(MOD_LSFT, KC_BSPC), MO(L_FUNCN)
                                       //`--------------------------'  `--------------------------'
