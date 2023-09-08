@@ -30,7 +30,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define QUICK_TAP_TERM 0
 #define TAPPING_TERM 230
-#define IGNORE_MOD_TAP_INTERRUPT
 #define COMBO_TERM 120
 
 #define COMBO_COUNT 2
