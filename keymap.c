@@ -15,6 +15,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "keycodes.h"
+#include "quantum_keycodes.h"
 #include QMK_KEYBOARD_H
 #include <stdio.h>
 #include "oled.h"
@@ -25,6 +27,8 @@ enum layer_names {
     L_QWERTY = 0,
     L_COLEMAK,
     L_GAME,
+    L_GAME1,
+    L_GAME2,
     L_NAVI,
     L_MOUSE,
     L_NUM,
@@ -123,6 +127,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   ),
 
+  [L_GAME1] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+    KC_ESCAPE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                          XXXXXXX,    KC_1,    KC_2,    KC_3, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+     XXXXXXX, KC_LEFT, KC_DOWN, KC_RIGHT, XXXXXXX, XXXXXXX,                         KC_0,    KC_5,    KC_6,    KC_7, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_4, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                         XXXXXXX, XXXXXXX, KC_UP,       KC_ENT, XXXXXXX, MO(L_FUNCN) 
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [L_GAME2] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+    KC_ESCAPE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,    KC_E,    KC_R,    KC_T, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+     XXXXXXX,    KC_Z,   KC_X,    KC_C, XXXXXXX, XXXXXXX,                         KC_Q,    KC_G,KC_LBRC,KC_RBRC, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_F, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                         XXXXXXX, XXXXXXX, KC_V,       KC_ENT, XXXXXXX, MO(L_FUNCN) 
+                                      //`--------------------------'  `--------------------------'
+  ),
 
   [L_NAVI] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -180,7 +207,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                             DF(L_GAME), DF(L_QWERTY), DF(L_COLEMAK),     _______, _______, _______
+                             DF(L_GAME), DF(L_QWERTY), DF(L_COLEMAK),     DF(L_GAME1), DF(L_GAME2), _______
                                       //`--------------------------'  `--------------------------'
   ),
 
