@@ -24,17 +24,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Layers
 enum layer_names {
-    L_QWERTY = 0,
-    L_COLEMAK,
-    L_GAME,
-    L_GAME1,
-    L_GAME2,
-    L_NAVI,
-    L_MOUSE,
-    L_NUM,
-    L_SYM,
-    L_GUI,
-    L_FUNCN,
+    L_QWERTY = 0,       // a normal layer for qwerty (with home row mods GASC)
+    L_COLEMAK,          // a normal layer for colemak (with home tow mods GASC)
+    L_GAME,             // a qwerty layer which without any tap dance
+    L_GAME1,            // an alternative gaming layer
+    L_GAME2,            // yet an alternative gaming layer
+    L_NAVI,             // a multi-purpose layer for some quick navigation
+    L_MOUSE,            //! not implemented yet
+    L_NUM,              // a number layer
+    L_SYM,              // a symbol layer
+    L_GUI,              // a layer for GUI relative controls, e.g. moving a window around
+    L_FUNCN,            // a layer for function-key and switching default layer e.g. colemak and game layer.
 };
 
 // Homerow mods for qwerty
@@ -73,11 +73,11 @@ enum layer_names {
 
 // Macros
 enum custom_keycodes {
-    BACK_D = SAFE_RANGE
+    BACK_D = SAFE_RANGE         // parent directory; inputs: "../"
 };
 
 
-// combos
+// Combos
 const uint16_t PROGMEM kj_esc[] = {LSFT_T(KC_K), LCTL_T(KC_J), COMBO_END};
 const uint16_t PROGMEM KJ_esc[] = {S(LSFT_T(KC_K)), S(LCTL_T(KC_J)), COMBO_END};
 
@@ -87,6 +87,7 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 
 
+// Layers
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Normal layer
   //  use home row mods: GASC
@@ -213,6 +214,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 
+//// Empty layer template
 //   [LAYER_NAME] = LAYOUT_split_3x6_3(
 //   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
 //      _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
