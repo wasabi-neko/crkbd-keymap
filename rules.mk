@@ -6,4 +6,4 @@ LTO_ENABLE      = yes
 CAPS_WORD_ENABLE = yes
 COMBO_ENABLE = yes
 
-SRC += ./oled.c
+SRC += ./takodachi32-animation/tako32-oled.c ./oled.c 

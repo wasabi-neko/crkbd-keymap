@@ -1,0 +1,3 @@
+[submodule "takodachi32-animation"]
+	path = takodachi32-animation
+	url = git@github.com:wasabi-neko/takodachi32-animation.git
